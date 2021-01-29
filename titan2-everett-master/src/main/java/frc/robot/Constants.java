@@ -49,6 +49,9 @@ public final class Constants {
     //THROWER
     public static int LEFT_THROWER = 5;
     public static int RIGHT_THROWER = 6;
+
+    //CAMERA SERVO
+    public static int SERVO1 = 8;
   
   }
 
