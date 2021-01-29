@@ -53,9 +53,7 @@ public class DriveCommand extends CommandBase {
       valuerightx = 0;
     } 
 
-    if(valuelefty == 0 && drive.gyroAssist) drive.disengageDriveAssist();
-    else if(valuelefty != 0 && !drive.gyroAssist) drive.engageDriveAssist();
-
+    drive.tankDrive.arcadeDrive( valuelefty, valuerightx);
 
     //   if(BeSuperCareful.superCareful){
     //     drive.tankDrive.arcadeDrive(SLOW_CONST * valuelefty, SLOW_CONST * valuerightx);

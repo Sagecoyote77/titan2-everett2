@@ -37,14 +37,18 @@ public final class Constants {
 
     // DUMP
     public static int DUMPER_LEFT_SERVO = 0;
-    public static int DUMPER_RIGHT_SERVO = 5;
+    public static int DUMPER_RIGHT_SERVO = 13;
 
     // CLIMB
-    public static int WINCH = 6;
+    public static int WINCH = 12;
     public static int ELEVATOR = 1;
     
     // BUTT WHEEL
-    public static int BUTT_WHEEL = 8;
+    public static int BUTT_WHEEL = 11;
+
+    //THROWER
+    public static int LEFT_THROWER = 5;
+    public static int RIGHT_THROWER = 6;
   
   }
 

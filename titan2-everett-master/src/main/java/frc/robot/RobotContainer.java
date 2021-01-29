@@ -37,6 +37,7 @@ public class RobotContainer {
   // STATIC SUBSYSTEMS
   public static Drive drivymcDriveDriverson = new Drive();
   public static ButtWheel spinnymcSpinSpinnerson = new ButtWheel();
+  public static Thrower thrower = new Thrower();
   public static BallDumper dumpymcDumpDumperson = new BallDumper();
   public static Climb climbymcClimbClimberson = new Climb();
 
@@ -123,7 +124,7 @@ public class RobotContainer {
     ///////////////////////////////////////////////////////////////////////////////////
 
     new JoystickButton(JoystickController, 1)
-    .whenPressed(new ButtSpin(false));
+    .whenPressed(new Throw());
 
     new JoystickButton(JoystickController, 2)
     .whenPressed(new ButtSpin(true));
