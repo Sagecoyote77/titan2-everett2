@@ -17,7 +17,8 @@ public class Thrower extends SubsystemBase {
   
   private Jaguar throwLeft = new Jaguar(Constants.PWDConstants.LEFT_THROWER);
   private Jaguar throwRight = new Jaguar(Constants.PWDConstants.RIGHT_THROWER);
-  public SpeedControllerGroup thowerGroup;
+  public SpeedControllerGroup thowerGroup1;
+  public SpeedControllerGroup thowerGroup2;
 
   /**
    * Open Smart Dashboard or Shuffleboard to see the color detected by the 
@@ -25,7 +26,8 @@ public class Thrower extends SubsystemBase {
    */
   public Thrower(){
     //armEncoder.reset(); // encoder starts at zero. Max is ~900?
-    thowerGroup = new SpeedControllerGroup(throwLeft, throwRight);
+    thowerGroup1 = new SpeedControllerGroup(throwRight);
+    thowerGroup2= new SpeedControllerGroup(throwLeft);
   }
 
 }

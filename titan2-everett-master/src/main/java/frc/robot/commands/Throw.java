@@ -17,7 +17,8 @@ import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 
 public class Throw extends CommandBase {
 
-  private SpeedController shoot = RobotContainer.thrower.thowerGroup;
+  private SpeedController shootRight = RobotContainer.thrower.thowerGroup1;
+  private SpeedController shootLeft = RobotContainer.thrower.thowerGroup2;
 
   // Called just before this Command runs the first time
   @Override
@@ -28,7 +29,8 @@ public class Throw extends CommandBase {
   // Called repeatedly when this Command is scheduled to run
   @Override
   public void execute() {
-    shoot.set(0.8);
+    shootRight.set(0.8);
+    shootLeft.set(-0.8);
 
     }
 
@@ -41,7 +43,8 @@ public class Throw extends CommandBase {
   // Called once after isFinished returns true
   @Override
   public void end(boolean interupted) {
-    shoot.set(0);
+    shootRight.set(0);
+    shootLeft.set(0);
   }
 
 }

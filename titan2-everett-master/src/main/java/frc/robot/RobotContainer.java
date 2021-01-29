@@ -40,7 +40,7 @@ public class RobotContainer {
   public static Thrower thrower = new Thrower();
   public static BallDumper dumpymcDumpDumperson = new BallDumper();
   public static Climb climbymcClimbClimberson = new Climb();
-  public static CamPan cameraServo = new Servo();
+  //public static CamPan cameraServo = new Servo();
 
   public static XboxController XboxController = new XboxController(OIConstants.XBOX_PORT);
   public static Joystick JoystickController = new Joystick(OIConstants.JOYSTICK_PORT);
@@ -125,7 +125,7 @@ public class RobotContainer {
     ///////////////////////////////////////////////////////////////////////////////////
 
     new JoystickButton(JoystickController, 1)
-    .whenPressed(new Throw());
+    .whileHeld(new Throw());
 
     new JoystickButton(JoystickController, 2)
     .whenPressed(new ButtSpin(true));
