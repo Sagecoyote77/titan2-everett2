@@ -14,7 +14,6 @@ public class BeSuperCareful extends CommandBase{
     public boolean superCareful = false;
 
     public BeSuperCareful(){
-        this.superCareful = superCareful;
     }
 
     public void beCareful(){

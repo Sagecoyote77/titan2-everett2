@@ -17,7 +17,6 @@ import frc.robot.subsystems.Drive;
  */
 public class DriveCommand extends CommandBase {
 
-  private final double SLOW_CONST = .2;
   private Drive drive = RobotContainer.drivymcDriveDriverson;
 
   public DriveCommand() {

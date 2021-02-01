@@ -51,7 +51,7 @@ public final class Constants {
     public static int RIGHT_THROWER = 6;
 
     //CAMERA SERVO
-    public static int SERVO1 = 8;
+    public static int CAMSERVO = 8;
   
   }
 

@@ -1,0 +1,4 @@
+{
+    "java.errors.incompleteClasspath.severity": "error",
+    "problems.showCurrentInStatus": true
+}

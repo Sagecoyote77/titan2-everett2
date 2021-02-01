@@ -38,6 +38,7 @@ public class RobotContainer {
   public static Drive drivymcDriveDriverson = new Drive();
   public static ButtWheel spinnymcSpinSpinnerson = new ButtWheel();
   public static Thrower thrower = new Thrower();
+  public static CameraNetwork camServo = new CameraNetwork();
   public static BallDumper dumpymcDumpDumperson = new BallDumper();
   public static Climb climbymcClimbClimberson = new Climb();
   //public static CamPan cameraServo = new Servo();
@@ -127,26 +128,29 @@ public class RobotContainer {
     new JoystickButton(JoystickController, 1)
     .whileHeld(new Throw());
 
-    new JoystickButton(JoystickController, 2)
-    .whenPressed(new ButtSpin(true));
-
     new JoystickButton(JoystickController, 3)
-    .whenPressed( new BeSuperCareful() );
+    .whenPressed( new CameraUp() ); 
 
-    new JoystickButton(JoystickController, 4)
-    .whenHeld(new ClimbElevatorDown(false));
+    new JoystickButton( JoystickController, 4 )
+    .whenPressed( new CameraDown() );
 
-    new JoystickButton(JoystickController, 5)
-    .whileHeld(new ButtBackwardSpin());
+    // new JoystickButton(JoystickController, 3)
+    // .whenPressed( new BeSuperCareful() );
 
-    new JoystickButton(JoystickController, 6)
-    .whenHeld(new ButtForwardSpin());
+    // new JoystickButton(JoystickController, 4)
+    // .whenHeld(new ClimbElevatorDown(false));
 
-    new JoystickButton(JoystickController, 7)
-    .whenHeld(new ClimbElevatorDown(true));
+    // new JoystickButton(JoystickController, 5)
+    // .whileHeld(new ButtBackwardSpin());
 
-    new JoystickButton(JoystickController, 11)
-    .whenHeld(new ClimbUp());
+    // new JoystickButton(JoystickController, 6)
+    // .whenHeld(new ButtForwardSpin());
+
+    // new JoystickButton(JoystickController, 7)
+    // .whenHeld(new ClimbElevatorDown(true));
+
+    // new JoystickButton(JoystickController, 11)
+    // .whenHeld(new ClimbUp());
   }
 
   public void beSuperCareful(){
