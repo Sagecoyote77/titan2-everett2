@@ -11,6 +11,10 @@ public class CameraCommand extends CommandBase{
     Joystick j0 = RobotContainer.joystickController;
     Servo s0 = RobotContainer.camServo.servo1;
 
+    public CameraCommand() {
+        addRequirements( RobotContainer.camServo );
+    }
+
     @Override
     public void initialize(){
     }
