@@ -43,8 +43,8 @@ public class RobotContainer {
   public static Climb climbymcClimbClimberson = new Climb();
   //public static CamPan cameraServo = new Servo();
 
-  public static XboxController XboxController = new XboxController(OIConstants.XBOX_PORT);
-  public static Joystick JoystickController = new Joystick(OIConstants.JOYSTICK_PORT);
+  //public static XboxController XboxController = new XboxController(OIConstants.XBOX_PORT);
+  public static Joystick joystickController = new Joystick(OIConstants.JOYSTICK_PORT);
 
   public static Timer timer = new Timer();
   
@@ -68,6 +68,7 @@ public class RobotContainer {
 
     // SET DEFAULT COMMANDS
     drivymcDriveDriverson.setDefaultCommand(new DriveCommand());
+    camServo.setDefaultCommand( new CameraCommand() );
   }
   /**
    * Use this method to define your button->command mappings.  Buttons can be created by
@@ -98,9 +99,9 @@ public class RobotContainer {
     // .whenPressed(new DriveToAngle(270));
 
     // Right bumper
-    new JoystickButton(XboxController, Button.kBumperRight.value)
-    .whenPressed(() -> {
-    }); 
+    // new JoystickButton(XboxController, Button.kBumperRight.value)
+    // .whenPressed(() -> {
+    // }); 
 
     // Left bumper
     // new JoystickButton(XboxController, Button.kBumperLeft.value)
@@ -110,29 +111,23 @@ public class RobotContainer {
     // });
 
     // Left Stick
-    new JoystickButton(XboxController, Button.kStickLeft.value)
-    .whenPressed(() -> {
-      CommandScheduler.getInstance().cancelAll();
-    });
+    // new JoystickButton(XboxController, Button.kStickLeft.value)
+    // .whenPressed(() -> {
+    //   CommandScheduler.getInstance().cancelAll();
+    // });
 
     // Right Stick
-    new JoystickButton(XboxController, Button.kStickRight.value)
-    .whenPressed(() -> {
-      CommandScheduler.getInstance().cancelAll();
-    });
+    // new JoystickButton(XboxController, Button.kStickRight.value)
+    // .whenPressed(() -> {
+    //   CommandScheduler.getInstance().cancelAll();
+    // });
 
     ///////////////////////////////////////////////////////////////////////////////////
     /////////////////////////////*** JOYSTICK BINDINGS ***/////////////////////////////
     ///////////////////////////////////////////////////////////////////////////////////
 
-    new JoystickButton(JoystickController, 1)
+    new JoystickButton( joystickController, 1 )
     .whileHeld(new Throw());
-
-    new JoystickButton(JoystickController, 3)
-    .whenPressed( new CameraUp() ); 
-
-    new JoystickButton( JoystickController, 4 )
-    .whenPressed( new CameraDown() );
 
     // new JoystickButton(JoystickController, 3)
     // .whenPressed( new BeSuperCareful() );

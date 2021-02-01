@@ -41,8 +41,8 @@ public class DriveCommand extends CommandBase {
     // double rightx = RobotContainer.XboxController.getRawAxis(0);
     // double valuerightx = -rightx;
 
-    double valuelefty = RobotContainer.JoystickController.getY();
-    double rightx = RobotContainer.JoystickController.getX();
+    double valuelefty = RobotContainer.joystickController.getY();
+    double rightx = RobotContainer.joystickController.getX();
     double valuerightx = -rightx;
 
     if(Math.abs(valuelefty) < dead){
