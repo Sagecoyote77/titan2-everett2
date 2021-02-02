@@ -16,7 +16,7 @@ package frc.robot;
 public final class Constants {
   
   public static final class OIConstants {
-    
+
     public static final int JOYSTICK_PORT = 1;
 
   }
@@ -43,14 +43,5 @@ public final class Constants {
     public static double ANGLE_TOLERANCE = 2.0;
 
   }
-
-  public static final class DIOConstants{
-    public static int ELEVATOR_ENC_A = 1;
-    public static int ELEVATOR_ENC_B = 2; 
-    // public static int DIO_LIMITUP = 4;
-    // public static int DIO_LIMITDOWN = 5;
-
-  }
-
   
 }

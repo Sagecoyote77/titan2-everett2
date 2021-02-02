@@ -104,13 +104,6 @@ public class Robot extends TimedRobot {
     //SmartDashboard.putNumber("Elevator Encoder", RobotContainer.climbymcClimbClimberson.encoder.getRaw());
 
     SmartDashboard.putNumber("Timer", RobotContainer.timer.get());
-
-    // if(RobotContainer.drivymcDriveDriverson.rightDistanceSensor.isRangeValid()){
-    //   SmartDashboard.putNumber("Right Dist", RobotContainer.drivymcDriveDriverson.rightDistanceSensor.getRange());
-    // }
-    // if(RobotContainer.drivymcDriveDriverson.leftDistanceSensor.isRangeValid()){
-    //   SmartDashboard.putNumber("Left Dist", RobotContainer.drivymcDriveDriverson.leftDistanceSensor.getRange());
-    // }
   }
  
   /**

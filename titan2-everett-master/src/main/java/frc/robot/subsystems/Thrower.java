@@ -25,7 +25,6 @@ public class Thrower extends SubsystemBase {
    * sensor.
    */
   public Thrower(){
-    //armEncoder.reset(); // encoder starts at zero. Max is ~900?
     thowerGroup1 = new SpeedControllerGroup(throwRight);
     thowerGroup2= new SpeedControllerGroup(throwLeft);
   }

@@ -39,10 +39,6 @@ public class Drive extends SubsystemBase {
   public DifferentialDrive tankDrive;
 
   // grouping the motors
-  // public SpeedControllerGroup frontRight;
-  // public SpeedControllerGroup frontLeft;
-  // public SpeedControllerGroup backRight;
-  // public SpeedControllerGroup backLeft;
   public SpeedControllerGroup rightSide;
   public SpeedControllerGroup leftSide;
 
@@ -63,18 +59,8 @@ public class Drive extends SubsystemBase {
     backRightMotor = new Jaguar(Constants.PWDConstants.BACK_RIGHT);
     
     // setting up the motor groups
-    // frontRight = new SpeedControllerGroup(frontRightMotor);
-    // frontRight.setInverted(true);
-    // frontLeft = new SpeedControllerGroup(frontLeftMotor);
-    // frontLeft.setInverted(true);
-    // backRight = new SpeedControllerGroup(backRightMotor);
-    // backLeft = new SpeedControllerGroup(backLeftMotor);
     rightSide = new SpeedControllerGroup(frontRightMotor, backRightMotor);
     leftSide = new SpeedControllerGroup(frontLeftMotor, backLeftMotor);
-
-    // making a mecanum drive
-    //dMecanumDrive = new MecanumDrive(frontLeft, backLeft, frontRight, backRight);
-    //dMecanumDrive.setRightSideInverted(false);
 
     //making tank drive
     tankDrive = new DifferentialDrive(leftSide, rightSide);

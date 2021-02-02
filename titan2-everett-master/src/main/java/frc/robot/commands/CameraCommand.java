@@ -21,9 +21,11 @@ public class CameraCommand extends CommandBase{
     @Override
     public void execute(){
         int count = 0;
+        //slows down inner while loop to slow down servo movement/refresh rate
         while( count < 30 ){
             if( count % 5 == 0 ){
                 while( j0.getPOV() != -1 ){
+                    //moves servo based on POV value
                     if( j0.getPOV() == 0 ) s0.setAngle( s0.getAngle() + 1 );
                     else if( j0.getPOV() == 180 ) s0.setAngle( s0.getAngle() - 1 );
                 }

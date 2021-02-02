@@ -33,13 +33,8 @@ public class DriveCommand extends CommandBase {
   // Called repeatedly when this Command is scheduled to run
   @Override
   public void execute() {
-    //SmartDashboard.putBoolean("StraightAssist", driveStraight);
     //MANUAL DEAD ZONE
     double dead = 0.10;
-
-    // double valuelefty = RobotContainer.XboxController.getRawAxis(1);
-    // double rightx = RobotContainer.XboxController.getRawAxis(0);
-    // double valuerightx = -rightx;
 
     double valuelefty = RobotContainer.joystickController.getY();
     double rightx = RobotContainer.joystickController.getX();
@@ -54,10 +49,6 @@ public class DriveCommand extends CommandBase {
 
     drive.tankDrive.arcadeDrive( valuelefty, valuerightx);
 
-    //   if(BeSuperCareful.superCareful){
-    //     drive.tankDrive.arcadeDrive(SLOW_CONST * valuelefty, SLOW_CONST * valuerightx);
-    //   }
-    //   else drive.tankDrive.arcadeDrive(valuelefty, valuerightx);
    }
 
   // Make this return true when this Command no longer needs to run execute()
