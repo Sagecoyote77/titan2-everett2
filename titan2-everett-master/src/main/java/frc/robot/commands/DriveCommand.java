@@ -17,11 +17,11 @@ import frc.robot.subsystems.Drive;
  */
 public class DriveCommand extends CommandBase {
 
-  private Drive drive = RobotContainer.drivymcDriveDriverson;
+  private Drive drive = RobotContainer.driveTrain;
 
   public DriveCommand() {
     // Use requires() here to declare subsystem dependencies
-    addRequirements(RobotContainer.drivymcDriveDriverson);
+    addRequirements(RobotContainer.driveTrain);
   }
 
   // Called just before this Command runs the first time
@@ -35,7 +35,7 @@ public class DriveCommand extends CommandBase {
   public void execute() {
     //SmartDashboard.putBoolean("StraightAssist", driveStraight);
     //MANUAL DEAD ZONE
-    double dead = 0.15;
+    double dead = 0.10;
 
     // double valuelefty = RobotContainer.XboxController.getRawAxis(1);
     // double rightx = RobotContainer.XboxController.getRawAxis(0);

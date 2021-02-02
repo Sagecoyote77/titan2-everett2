@@ -16,13 +16,7 @@ package frc.robot;
 public final class Constants {
   
   public static final class OIConstants {
-
-    public static int xBUTTON_NUM = 3;
-    public static int aBUTTON_NUM = 1;
-    public static int bBUTTON_NUM = 2;
-    public static int yBUTTON_NUM = 4;
-    public static int LEFTSTICKCLICK_NUM = 9;
-    public static final int XBOX_PORT = 0;
+    
     public static final int JOYSTICK_PORT = 1;
 
   }
@@ -34,17 +28,6 @@ public final class Constants {
     public static int BACK_RIGHT = 4;
     public static int FRONT_LEFT = 3;
     public static int BACK_LEFT = 2;
-
-    // DUMP
-    public static int DUMPER_LEFT_SERVO = 0;
-    public static int DUMPER_RIGHT_SERVO = 13;
-
-    // CLIMB
-    public static int WINCH = 12;
-    public static int ELEVATOR = 1;
-    
-    // BUTT WHEEL
-    public static int BUTT_WHEEL = 11;
 
     //THROWER
     public static int LEFT_THROWER = 5;

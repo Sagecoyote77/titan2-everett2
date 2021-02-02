@@ -33,23 +33,16 @@ public class RobotContainer {
   // The robot's subsystems and commands are defined here...\
 
   // STATIC SUBSYSTEMS
-  public static Drive drivymcDriveDriverson = new Drive();
-  public static ButtWheel spinnymcSpinSpinnerson = new ButtWheel();
+  public static Drive driveTrain = new Drive();
   public static Thrower thrower = new Thrower();
   public static CameraNetwork camServo = new CameraNetwork();
-  public static BallDumper dumpymcDumpDumperson = new BallDumper();
-  public static Climb climbymcClimbClimberson = new Climb();
-  //public static CamPan cameraServo = new Servo();
-
-  //public static XboxController XboxController = new XboxController(OIConstants.XBOX_PORT);
+  
   public static Joystick joystickController = new Joystick(OIConstants.JOYSTICK_PORT);
 
   public static Timer timer = new Timer();
   
   SendableChooser<CommandBase> m_chooser = new SendableChooser<>();
   SendableChooser<CommandBase> winch_chooser = new SendableChooser<>();
-
-  public boolean superCareful = false;
 
 
   /**
@@ -62,10 +55,10 @@ public class RobotContainer {
     // BUILD AUTONOMOUS OPTIONS
     SmartDashboard.putData("Auto mode", m_chooser);
 
-    SmartDashboard.putData("Pull winch back", new ClimbDown());
+    //SmartDashboard.putData("Pull winch back", new ClimbDown());
 
     // SET DEFAULT COMMANDS
-    drivymcDriveDriverson.setDefaultCommand(new DriveCommand());
+    driveTrain.setDefaultCommand(new DriveCommand());
     camServo.setDefaultCommand( new CameraCommand() );
   }
   /**
@@ -76,49 +69,6 @@ public class RobotContainer {
    */
   private void configureButtonBindings() {
 
-    ///////////////////////////////////////////////////////////////////////////////////
-    ///////////////////////////////*** XBOX BINDINGS ***///////////////////////////////
-    ///////////////////////////////////////////////////////////////////////////////////
-
-    // X button
-    // new JoystickButton(XboxController, Button.kX.value)
-    // .whenPressed(new DriveSquareUp());
-    
-    // // B button
-    // new JoystickButton(XboxController, Button.kB.value)
-    // .whenPressed(new DriveToAngle(180));
-
-    // // A button
-    // new JoystickButton(XboxController, Button.kA.value)
-    // .whenPressed(new DriveToAngle(90));
-
-    // // Y button
-    // new JoystickButton(XboxController, Button.kY.value)
-    // .whenPressed(new DriveToAngle(270));
-
-    // Right bumper
-    // new JoystickButton(XboxController, Button.kBumperRight.value)
-    // .whenPressed(() -> {
-    // }); 
-
-    // Left bumper
-    // new JoystickButton(XboxController, Button.kBumperLeft.value)
-    // .whenPressed(() -> {
-    //   drivymcDriveDriverson.superCareful = !drivymcDriveDriverson.superCareful;
-    //   SmartDashboard.putBoolean("superCareful", drivymcDriveDriverson.superCareful);
-    // });
-
-    // Left Stick
-    // new JoystickButton(XboxController, Button.kStickLeft.value)
-    // .whenPressed(() -> {
-    //   CommandScheduler.getInstance().cancelAll();
-    // });
-
-    // Right Stick
-    // new JoystickButton(XboxController, Button.kStickRight.value)
-    // .whenPressed(() -> {
-    //   CommandScheduler.getInstance().cancelAll();
-    // });
 
     ///////////////////////////////////////////////////////////////////////////////////
     /////////////////////////////*** JOYSTICK BINDINGS ***/////////////////////////////
@@ -126,28 +76,6 @@ public class RobotContainer {
 
     new JoystickButton( joystickController, 1 )
     .whileHeld(new Throw());
-
-    // new JoystickButton(JoystickController, 3)
-    // .whenPressed( new BeSuperCareful() );
-
-    // new JoystickButton(JoystickController, 4)
-    // .whenHeld(new ClimbElevatorDown(false));
-
-    // new JoystickButton(JoystickController, 5)
-    // .whileHeld(new ButtBackwardSpin());
-
-    // new JoystickButton(JoystickController, 6)
-    // .whenHeld(new ButtForwardSpin());
-
-    // new JoystickButton(JoystickController, 7)
-    // .whenHeld(new ClimbElevatorDown(true));
-
-    // new JoystickButton(JoystickController, 11)
-    // .whenHeld(new ClimbUp());
-  }
-
-  public void beSuperCareful(){
-
   }
 
 
