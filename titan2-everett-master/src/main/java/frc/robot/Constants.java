@@ -35,6 +35,9 @@ public final class Constants {
 
     //CAMERA SERVO
     public static int CAMSERVO = 8;
+
+    //ELEVATOR
+    public static int ELEVATOR = 1;
   
   }
 

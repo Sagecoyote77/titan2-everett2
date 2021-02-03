@@ -35,6 +35,7 @@ public class RobotContainer {
   public static Drive driveTrain = new Drive();
   public static Thrower thrower = new Thrower();
   public static CameraNetwork camServo = new CameraNetwork();
+  public static Elevator extendor = new Elevator();
   
   public static Joystick joystickController = new Joystick(OIConstants.JOYSTICK_PORT);
 
@@ -75,9 +76,11 @@ public class RobotContainer {
 
     new JoystickButton( joystickController, 1 )
     .whileHeld(new Throw());
+
+    new JoystickButton( joystickController, 3 )
+    .whileHeld( new Elevation() );
+
   }
-
-
   /**
    * Use this to pass the autonomous command to the main {@link Robot} class.
    *
