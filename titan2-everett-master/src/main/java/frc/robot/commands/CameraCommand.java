@@ -20,15 +20,17 @@ public class CameraCommand extends CommandBase{
 
     @Override
     public void execute(){
-        while( j0.getPOV() != -1 ){
-            //moves servo based on POV value
-             if( j0.getPOV() < 90 || j0.getPOV() > 270 ){
-                s0.setAngle( Math.abs( s0.getAngle() - 0.001 ) );
-             }
-             else if( j0.getPOV() > 90 || j0.getPOV() < 270 ) {
-                s0.setAngle( Math.abs( s0.getAngle() + 0.001 ) );
-             }
-        }
+        if( j0.getPOV() == 0 ) s0.setAngle( 45 );
+        else if( j0.getPOV() == 180 ) s0.setAngle( 100 );
+        // while( j0.getPOV() != -1 ){
+        //     //moves servo based on POV value
+        //      if( j0.getPOV() < 90 || j0.getPOV() > 270 ){
+        //         s0.setAngle( Math.abs( s0.getAngle() - 0.001 ) );
+        //      }
+        //      else if( j0.getPOV() > 90 || j0.getPOV() < 270 ) {
+        //         s0.setAngle( Math.abs( s0.getAngle() + 0.001 ) );
+        //      }
+        // }
     }
 
     @Override

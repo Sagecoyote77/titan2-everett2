@@ -20,6 +20,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.Constants.OIConstants;
 import frc.robot.commands.*;
 import frc.robot.subsystems.*;
+import frc.robot.subsystems.Intaker;
 
 
 /**
@@ -36,6 +37,7 @@ public class RobotContainer {
   public static Thrower thrower = new Thrower();
   public static CameraNetwork camServo = new CameraNetwork();
   public static Elevator extendor = new Elevator();
+  public static Intaker scoop = new Intaker();
   
   public static Joystick joystickController = new Joystick(OIConstants.JOYSTICK_PORT);
 
@@ -76,6 +78,9 @@ public class RobotContainer {
 
     new JoystickButton( joystickController, 1 )
     .whileHeld(new Throw());
+
+    new JoystickButton( joystickController, 2 )
+    .whileHeld( new Intake() );
 
     new JoystickButton( joystickController, 3 )
     .whileHeld( new Elevation() );
