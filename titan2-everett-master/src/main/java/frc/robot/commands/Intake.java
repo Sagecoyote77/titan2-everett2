@@ -11,7 +11,7 @@ import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.RobotContainer;
 
-public class Throw extends CommandBase {
+public class Intake extends CommandBase {
 
   private SpeedController shootRight = RobotContainer.thrower.thowerGroup1;
   private SpeedController shootLeft = RobotContainer.thrower.thowerGroup2;
@@ -25,8 +25,8 @@ public class Throw extends CommandBase {
   // Called repeatedly when this Command is scheduled to run
   @Override
   public void execute() {
-    shootRight.set( -0.999 );
-    shootLeft.set( 0.999 );
+    shootRight.set( 0.999 );
+    shootLeft.set( -0.999 );
     }
 
   // Make this return true when this Command no longer needs to run execute()
