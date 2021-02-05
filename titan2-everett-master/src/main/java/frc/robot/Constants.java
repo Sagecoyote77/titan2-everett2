@@ -33,11 +33,15 @@ public final class Constants {
     public static int LEFT_THROWER = 5;
     public static int RIGHT_THROWER = 6;
 
-    //CAMERA SERVO
+    //SERVOS
     public static int CAMSERVO = 8;
+    public static int LIGHT_SERVO = 0;
 
     //ELEVATOR
     public static int ELEVATOR = 1;
+
+    //ONE PUNCH THING
+    public static int PUNCHER = 9;
   
   }
 

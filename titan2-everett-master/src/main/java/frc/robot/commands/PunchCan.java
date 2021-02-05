@@ -4,11 +4,11 @@ import frc.robot.RobotContainer;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import edu.wpi.first.wpilibj.SpeedController;
 
-public class Elevation extends CommandBase {
-
-    private SpeedController extend = RobotContainer.thrower.thowerGroup1;
+public class PunchCan extends CommandBase {
     
-    public Elevation() {
+    private SpeedController punch = RobotContainer.punched.puncherGroup;
+    
+    public PunchCan() {
         addRequirements( RobotContainer.extendor );
     }
 
@@ -19,7 +19,7 @@ public class Elevation extends CommandBase {
 
   @Override
   public void execute(){
-    extend.set( 0.8 );
+    punch.set( 0.2 );
   }
 
   @Override
@@ -29,7 +29,7 @@ public class Elevation extends CommandBase {
 
   @Override
   public void end( boolean interrupted ){
-      extend.stopMotor();
+      punch.stopMotor();
   }
 
 }
