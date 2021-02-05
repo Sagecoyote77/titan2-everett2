@@ -88,7 +88,7 @@ public class RobotContainer {
     new JoystickButton( joystickController, 3 )
     .whileHeld( new Elevation() );
 
-    new JoystickButton( joystickController, 6 )
+    new JoystickButton( joystickController, 4 )
     .whenPressed( new SwitchLight() );
 
   }
