@@ -39,6 +39,7 @@ public class RobotContainer {
   public static Elevator extendor = new Elevator();
   public static CanPuncher punched = new CanPuncher();
   public static LightSwitcher switched = new LightSwitcher();
+  public static TurnAround autoForward = new TurnAround();
   
   //public static Intaker scoop = new Intaker();
   
@@ -89,7 +90,10 @@ public class RobotContainer {
     .whileHeld( new Elevation() );
 
     new JoystickButton( joystickController, 4 )
-    .whenPressed( new SwitchLight() );
+    .whileHeld( new SwitchLight() );
+
+    new JoystickButton( joystickController, 11 )
+    .whenPressed( new TurnAround() );
 
   }
   /**

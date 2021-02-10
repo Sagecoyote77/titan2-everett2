@@ -6,7 +6,7 @@ import edu.wpi.first.wpilibj.SpeedController;
 
 public class Elevation extends CommandBase {
 
-    private SpeedController extend = RobotContainer.thrower.thowerGroup1;
+    private SpeedController extend = RobotContainer.extendor.elevatorMotor;
     
     public Elevation() {
         addRequirements( RobotContainer.extendor );

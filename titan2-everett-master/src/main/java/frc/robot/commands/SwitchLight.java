@@ -8,7 +8,7 @@ import edu.wpi.first.wpilibj.Timer;
 public class SwitchLight extends CommandBase{
     
     Servo s1 = RobotContainer.switched.servo2;
-    //public static Timer timer = new Timer();
+    public static Timer timer = new Timer();
     double seconds = 1;
 
     public SwitchLight() {
@@ -23,7 +23,10 @@ public class SwitchLight extends CommandBase{
     public void execute(){
             s1.setAngle( 90 );
             s1.setAngle( 130 );
-            end( true );
+            // s1.setAngle( 90 );
+            // s1.setAngle( 130 );
+            // s1.setAngle( 90 );
+            // s1.setAngle( 130 );
     }
 
     @Override
