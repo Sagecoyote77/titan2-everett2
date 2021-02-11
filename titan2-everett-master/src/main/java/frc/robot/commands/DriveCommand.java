@@ -47,7 +47,7 @@ public class DriveCommand extends CommandBase {
       valuerightx = 0;
     } 
 
-    drive.tankDrive.arcadeDrive( valuelefty, valuerightx);
+    drive.tankDrive.arcadeDrive( valuelefty, valuerightx );
 
    }
 

@@ -32,6 +32,8 @@ import frc.robot.subsystems.*;
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...\
 
+  static int time = 10;
+
   // STATIC SUBSYSTEMS
   public static Drive driveTrain = new Drive();
   public static Thrower thrower = new Thrower();
@@ -40,6 +42,7 @@ public class RobotContainer {
   public static CanPuncher punched = new CanPuncher();
   public static LightSwitcher switched = new LightSwitcher();
   public static TurnAround autoForward = new TurnAround();
+  public static DriveTimeForward autForward = new DriveTimeForward( time );
   
   //public static Intaker scoop = new Intaker();
   
@@ -92,9 +95,11 @@ public class RobotContainer {
     new JoystickButton( joystickController, 4 )
     .whileHeld( new SwitchLight() );
 
-    new JoystickButton( joystickController, 11 )
+    new JoystickButton( joystickController, 7 )
     .whenPressed( new TurnAround() );
 
+    new JoystickButton( joystickController, 8 )
+    .whenPressed( new DriveTimeForward( time ) );
   }
   /**
    * Use this to pass the autonomous command to the main {@link Robot} class.
