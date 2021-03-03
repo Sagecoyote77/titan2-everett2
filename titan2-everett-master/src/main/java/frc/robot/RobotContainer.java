@@ -98,8 +98,8 @@ public class RobotContainer {
     new JoystickButton( joystickController, 2 )
     .whileHeld( new PunchCan() );
 
-    new JoystickButton( joystickController, 3 )
-    .whileHeld( new Elevation() );
+    // new JoystickButton( joystickController, 3 )
+    // .whileHeld( new Elevation() );
 
     new JoystickButton( joystickController, 4 )
     .whileHeld( new SwitchLight() );
@@ -116,8 +116,8 @@ public class RobotContainer {
     new JoystickButton( joystickController, 8 )
     .whenPressed( new DriveTimeForward( time ) );
 
-    new JoystickButton(joystickController, 9)
-    .whenHeld(new ElevationUp());
+    // new JoystickButton(joystickController, 9)
+    // .whenHeld(new ElevationUp());
   }
   /**
    * Use this to pass the autonomous command to the main {@link Robot} class.

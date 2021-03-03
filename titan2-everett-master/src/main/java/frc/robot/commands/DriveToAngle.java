@@ -11,7 +11,8 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.Constants;
 import frc.robot.RobotContainer;
 import frc.robot.subsystems.Drive;
-import frc.robot.subsystems.GyroE;
+import frc.robot.subsystems.GyroWrapper;
+//import frc.robot.subsystems.GyroE;
 import edu.wpi.first.wpilibj.ADXRS450_Gyro;
 import edu.wpi.first.wpilibj.interfaces.Gyro;
 import edu.wpi.first.wpilibj.*;
@@ -43,7 +44,7 @@ public class DriveToAngle extends CommandBase {
   // Called just before this Command runs the first time
   @Override
   public void initialize() {
-    target = GyroE.getAngle() + requestedRotation;
+    target = drive.gyro.getAngle() + requestedRotation;
     check = 0;
   }
 
