@@ -8,19 +8,15 @@ import frc.robot.Constants;
 
 public class Elevator extends SubsystemBase{
     
-    public Jaguar elevatorMotor, elevatorUpMotor;
+    public Jaguar elevatorMotor;
 
-    public SpeedControllerGroup elevation, elevating;
+    public SpeedControllerGroup elevation;
 
     public Elevator() {
 
         elevatorMotor = new Jaguar( Constants.PWDConstants.ELEVATOR );
 
         elevation = new SpeedControllerGroup( elevatorMotor );
-
-        elevatorUpMotor = new Jaguar(Constants.PWDConstants.ELEVATORUP);
-
-        elevating = new SpeedControllerGroup(elevatorUpMotor);
 
     }
 

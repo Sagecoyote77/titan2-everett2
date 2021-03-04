@@ -15,6 +15,7 @@ import edu.wpi.first.wpilibj.SpeedControllerGroup;
 
 public class Thrower extends SubsystemBase {
   
+  private Jaguar throwLeft = new Jaguar(Constants.PWDConstants.LEFT_THROWER);
   private Jaguar throwRight = new Jaguar(Constants.PWDConstants.RIGHT_THROWER);
   public SpeedControllerGroup thowerGroup1;
   public SpeedControllerGroup thowerGroup2;
@@ -25,6 +26,7 @@ public class Thrower extends SubsystemBase {
    */
   public Thrower(){
     thowerGroup1 = new SpeedControllerGroup(throwRight);
+    thowerGroup2= new SpeedControllerGroup(throwLeft);
   }
 
 }
