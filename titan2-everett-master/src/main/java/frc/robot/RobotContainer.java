@@ -16,6 +16,8 @@ import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import edu.wpi.first.wpilibj.*;
+import edu.wpi.first.wpilibj.ADXRS450_Gyro;
 
 import frc.robot.Constants.OIConstants;
 import frc.robot.commands.*;
@@ -37,12 +39,12 @@ public class RobotContainer {
   public static Thrower thrower = new Thrower();
   public static CameraNetwork camServo = new CameraNetwork();
   public static Elevator extendor = new Elevator();
-  public static CanPuncher punched = new CanPuncher();
+  public static Riser raising = new Riser();
+  public static CanPuncher canPuncher = new CanPuncher();
   public static LightSwitcher switched = new LightSwitcher();
   //public static DriveToAngle autoForward = new DriveToAngle( 90 );
   public static DriveTimeForward autForward = new DriveTimeForward( 10 );
   
-  //public static Intaker scoop = new Intaker();
   
   public static Joystick joystickController = new Joystick(OIConstants.JOYSTICK_PORT);
 
@@ -51,10 +53,6 @@ public class RobotContainer {
   SendableChooser<CommandBase> m_chooser = new SendableChooser<>();
   SendableChooser<CommandBase> winch_chooser = new SendableChooser<>();
 
-
-  //comment for change
-
-    //comment for change
 
   /**
    * The container for the robot.  Contains subsystems, OI devices, and commands.
@@ -91,21 +89,26 @@ public class RobotContainer {
     new JoystickButton( joystickController, 2 )
     .whileHeld( new PunchCan() );
 
-    // new JoystickButton( joystickController, 3 )
-    // .whileHeld( new Elevation() );
+    new JoystickButton( joystickController, 3 )
+    .whileHeld( new Elevation() );
 
     new JoystickButton( joystickController, 4 )
     .whileHeld( new SwitchLight() );
 
-    new JoystickButton( joystickController, 7 )
-    .whenPressed( new TurnAround() );
+    new JoystickButton( joystickController, 5 )
+    .whileHeld( new ClimbUp() );
+
+    new JoystickButton( joystickController, 6 )
+    .whileHeld( new ClimbDown() );
+
+    // new JoystickButton( joystickController, 7 )
+    // .whenPressed( new DriveToAngle( 90 ) );
 
     new JoystickButton( joystickController, 8 )
-
     .whenPressed( new DriveTimeForward( 10 ) );
 
-    // new JoystickButton(joystickController, 9)
-    // .whenHeld(new ElevationUp());
+    new JoystickButton(joystickController, 9)
+    .whenHeld(new ElevationUp());
   }
   /**
    * Use this to pass the autonomous command to the main {@link Robot} class.

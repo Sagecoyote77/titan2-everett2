@@ -4,12 +4,12 @@ import frc.robot.RobotContainer;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import edu.wpi.first.wpilibj.SpeedController;
 
-public class Elevation extends CommandBase {
+public class ElevationUp extends CommandBase {
 
-    private SpeedController extend = RobotContainer.extendor.elevatorMotor;
+    private SpeedController big = RobotContainer.raising.elevatorUpMotor;
     
-    public Elevation() {
-        addRequirements( RobotContainer.extendor );
+    public ElevationUp() {
+        addRequirements( RobotContainer.raising );
     }
 
     @Override
@@ -19,7 +19,7 @@ public class Elevation extends CommandBase {
 
   @Override
   public void execute(){
-    extend.set( 0.3 );
+    big.set( 0.6 );
   }
 
   @Override
@@ -29,7 +29,7 @@ public class Elevation extends CommandBase {
 
   @Override
   public void end( boolean interrupted ){
-      extend.stopMotor();
+      big.stopMotor();
   }
 
 }

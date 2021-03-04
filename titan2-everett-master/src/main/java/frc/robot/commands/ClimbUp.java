@@ -7,13 +7,13 @@ import frc.robot.RobotContainer;
 import frc.robot.Constants.OIConstants;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 
-public class PunchCan extends CommandBase {
+public class ClimbUp extends CommandBase {
     
     public static Joystick joystickController = new Joystick(OIConstants.JOYSTICK_PORT);
 
     private SpeedController punch = RobotContainer.canPuncher.puncherGroup;
     
-    public PunchCan() {
+    public ClimbUp() {
         addRequirements( RobotContainer.canPuncher );
     }
 
@@ -24,7 +24,7 @@ public class PunchCan extends CommandBase {
 
   @Override
   public void execute(){
-    punch.set( -0.1 );
+    punch.set( 0.5 );
   }
 
   @Override

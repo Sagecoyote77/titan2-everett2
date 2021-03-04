@@ -14,8 +14,7 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import edu.wpi.first.wpilibj.Jaguar;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
-import edu.wpi.first.wpilibj.drive.RobotDriveBase;
-import edu.wpi.first.wpilibj.drive.*;
+import edu.wpi.first.wpilibj.*;
 //import edu.wpi.first.wpilibj.drive.arcadeDrive;
 
 // LOCAL IMPORTS
@@ -28,7 +27,7 @@ import frc.robot.Constants;
 public class Drive extends SubsystemBase {
   
   // here's a gyro
-  public GyroWrapper gyro = new GyroWrapper();
+  public GyroWrapper gyro = new GyroWrapper( SPI.Port.kMXP );
 
   public Rev2mDistanceSensor leftDistanceSensor = new Rev2mDistanceSensor(Port.kMXP);
   public Rev2mDistanceSensor rightDistanceSensor = new Rev2mDistanceSensor(Port.kOnboard);
