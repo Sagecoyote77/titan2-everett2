@@ -51,7 +51,6 @@ public class Drive extends SubsystemBase {
   //super careful extra precise mode
   public boolean superCareful = false;
 
-
   public Drive(){    
 
     gyro.reset();

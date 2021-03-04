@@ -34,8 +34,6 @@ import frc.robot.subsystems.*;
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...\
 
-  static int time = 10;
-
   // STATIC SUBSYSTEMS
   public static Drive driveTrain = new Drive();
   public static Thrower thrower = new Thrower();
@@ -45,7 +43,7 @@ public class RobotContainer {
   public static CanPuncher canPuncher = new CanPuncher();
   public static LightSwitcher switched = new LightSwitcher();
   public static DriveToAngle autoForward = new DriveToAngle( 90 );
-  public static DriveTimeForward autForward = new DriveTimeForward( time );
+  public static DriveTimeForward autForward = new DriveTimeForward( 10 );
   //public static CanPuncher climber = new CanPuncher();
   //public static GyroWrapper gyro = new GyroWrapper( SPI.Port.kMXP );
 
@@ -114,7 +112,7 @@ public class RobotContainer {
     .whenPressed( new DriveToAngle( 90 ) );
 
     new JoystickButton( joystickController, 8 )
-    .whenPressed( new DriveTimeForward( time ) );
+    .whenPressed( new DriveTimeForward( 10 ) );
 
     // new JoystickButton(joystickController, 9)
     // .whenHeld(new ElevationUp());

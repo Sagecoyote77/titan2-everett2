@@ -5,14 +5,11 @@ import java.sql.Time;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.RobotContainer;
 import frc.robot.subsystems.Drive;
-import edu.wpi.first.wpilibj.controller.*;
 
 public class DriveTimeForward extends CommandBase{
     private int count = 0;
   private double time;
-  double speed = 0.0;
   private Drive drive = RobotContainer.driveTrain;
-  boolean working = false;
 
   public DriveTimeForward( double time ) {
     // Use requires() here to declare subsystem dependencies
@@ -30,19 +27,9 @@ public class DriveTimeForward extends CommandBase{
   @Override
   public void execute() {
       count ++;
-      // while( speed < 0.9 ){
-      //   drive.tankDrive.tankDrive( -speed, -speed );
-      //   speed += 0.001;
-      // }
-      drive.tankDrive.tankDrive( -0.999, -0.999 );
-      if( !working ){
-        work();
-      }
+      drive.tankDrive.arcadeDrive( 0.5, 0.5 );
     }
 
-    public void work(){
-      working = true;
-    }
 
   // Make this return true when this Command no longer needs to run execute()
   @Override
