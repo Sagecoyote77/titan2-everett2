@@ -59,8 +59,6 @@ public class RobotContainer {
   SendableChooser<CommandBase> winch_chooser = new SendableChooser<>();
 
 
-  //comment for change
-
   /**
    * The container for the robot.  Contains subsystems, OI devices, and commands.
    */
