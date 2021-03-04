@@ -39,18 +39,8 @@ public class RobotContainer {
   public static Elevator extendor = new Elevator();
   public static CanPuncher punched = new CanPuncher();
   public static LightSwitcher switched = new LightSwitcher();
-<<<<<<< HEAD
-  public static DriveToAngle autoForward = new DriveToAngle( 90 );
+  //public static DriveToAngle autoForward = new DriveToAngle( 90 );
   public static DriveTimeForward autForward = new DriveTimeForward( 10 );
-  //public static CanPuncher climber = new CanPuncher();
-  //public static GyroWrapper gyro = new GyroWrapper( SPI.Port.kMXP );
-
-  public static ADXRS450_Gyro gyro = new ADXRS450_Gyro();
-  //ADXRS450_Gyro gyros = new ADXRS450_Gyro();
-=======
-  public static TurnAround autoForward = new TurnAround();
-  public static DriveTimeForward autForward = new DriveTimeForward( time );
->>>>>>> parent of 15fb3fd (Lots of new stuff)
   
   //public static Intaker scoop = new Intaker();
   
@@ -63,6 +53,8 @@ public class RobotContainer {
 
 
   //comment for change
+
+    //comment for change
 
   /**
    * The container for the robot.  Contains subsystems, OI devices, and commands.
@@ -109,14 +101,11 @@ public class RobotContainer {
     .whenPressed( new TurnAround() );
 
     new JoystickButton( joystickController, 8 )
-<<<<<<< HEAD
+
     .whenPressed( new DriveTimeForward( 10 ) );
 
     // new JoystickButton(joystickController, 9)
     // .whenHeld(new ElevationUp());
-=======
-    .whenPressed( new DriveTimeForward( time ) );
->>>>>>> parent of 15fb3fd (Lots of new stuff)
   }
   /**
    * Use this to pass the autonomous command to the main {@link Robot} class.

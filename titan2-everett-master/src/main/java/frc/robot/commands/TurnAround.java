@@ -35,11 +35,7 @@ public class TurnAround extends CommandBase {
   @Override
   public void execute() {
       count ++;
-<<<<<<< HEAD
       drive.tankDrive.arcadeDrive(0.5, 0.5, false);
-=======
-      drive.tankDrive.arcadeDrive( 0.5, 0.5 );
->>>>>>> parent of 15fb3fd (Lots of new stuff)
     }
 
 
@@ -52,11 +48,7 @@ public class TurnAround extends CommandBase {
   // Called once after isFinished returns true
   @Override
   public void end(boolean interrupted) {
-<<<<<<< HEAD
     drive.tankDrive.arcadeDrive(0.5, 0.5, false);
-=======
-    drive.tankDrive.arcadeDrive( 0.5, 0.5 );
->>>>>>> parent of 15fb3fd (Lots of new stuff)
   }
 
 }
