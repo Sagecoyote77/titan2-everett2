@@ -16,15 +16,14 @@ import edu.wpi.first.wpilibj.SpeedControllerGroup;
 public class Thrower extends SubsystemBase {
   
   private Jaguar throwRight = new Jaguar(Constants.PWDConstants.RIGHT_THROWER);
-  public SpeedControllerGroup thowerGroup1;
-  public SpeedControllerGroup thowerGroup2;
+  public SpeedControllerGroup thowerGroup;
 
   /**
    * Open Smart Dashboard or Shuffleboard to see the color detected by the 
    * sensor.
    */
   public Thrower(){
-    thowerGroup1 = new SpeedControllerGroup(throwRight);
+    thowerGroup = new SpeedControllerGroup(throwRight);
   }
 
 }

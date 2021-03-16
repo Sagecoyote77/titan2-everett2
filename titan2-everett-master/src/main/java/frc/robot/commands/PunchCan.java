@@ -24,7 +24,7 @@ public class PunchCan extends CommandBase {
 
   @Override
   public void execute(){
-    punch.set( -0.1 );
+    punch.set( -0.08 );
   }
 
   @Override

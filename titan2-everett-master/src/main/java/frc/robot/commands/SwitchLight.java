@@ -23,10 +23,6 @@ public class SwitchLight extends CommandBase{
     public void execute(){
             s1.setAngle( 90 );
             s1.setAngle( 130 );
-            // s1.setAngle( 90 );
-            // s1.setAngle( 130 );
-            // s1.setAngle( 90 );
-            // s1.setAngle( 130 );
     }
 
     @Override

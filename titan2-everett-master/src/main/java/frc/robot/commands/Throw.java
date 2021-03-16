@@ -13,8 +13,7 @@ import frc.robot.RobotContainer;
 
 public class Throw extends CommandBase {
 
-  private SpeedController shootRight = RobotContainer.thrower.thowerGroup1;
-  private SpeedController shootLeft = RobotContainer.thrower.thowerGroup2;
+  private SpeedController shootRight = RobotContainer.thrower.thowerGroup;
 
   // Called just before this Command runs the first time
   @Override
@@ -26,7 +25,6 @@ public class Throw extends CommandBase {
   @Override
   public void execute() {
     shootRight.set( -0.999 );
-    shootLeft.set( 0.999 );
   }
 
   // Make this return true when this Command no longer needs to run execute()
@@ -39,7 +37,6 @@ public class Throw extends CommandBase {
   @Override
   public void end(boolean interupted) {
     shootRight.set(0);
-    shootLeft.set(0);
   }
 
 }

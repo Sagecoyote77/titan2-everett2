@@ -1,28 +1,20 @@
-/*----------------------------------------------------------------------------*/
-/* Copyright (c) 2017-2018 FIRST. All Rights Reserved.                        */
-/* Open Source Software - may be modified and shared by FRC teams. The code   */
-/* must be accompanied by the FIRST BSD license file in the root directory of */
-/* the project.                                                               */
-/*----------------------------------------------------------------------------*/
-
 package frc.robot.commands;
+
+import java.sql.Time;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.RobotContainer;
 import frc.robot.subsystems.Drive;
-/**
- * Responding to motor control. Runs infinitely
- */
 
-public class TurnAround extends CommandBase {
-
-  private int count = 0;
+public class TurnLeft extends CommandBase{
+    private int count = 0;
   private double time;
   private Drive drive = RobotContainer.driveTrain;
 
-  public TurnAround() {
+  public TurnLeft( double time ) {
     // Use requires() here to declare subsystem dependencies
     addRequirements(drive);
+    this.time = time;
   }
 
   // Called just before this Command runs the first time
@@ -35,7 +27,7 @@ public class TurnAround extends CommandBase {
   @Override
   public void execute() {
       count ++;
-      drive.tankDrive.arcadeDrive(0.5, 0.5, false);
+      drive.tankDrive.arcadeDrive( 0.6, 0.9 );
     }
 
 
@@ -48,7 +40,7 @@ public class TurnAround extends CommandBase {
   // Called once after isFinished returns true
   @Override
   public void end(boolean interrupted) {
-    drive.tankDrive.arcadeDrive(0.5, 0.5, false);
+    drive.tankDrive.arcadeDrive( 0, 0 );
   }
 
 }

@@ -19,7 +19,7 @@ public class ElevationUp extends CommandBase {
 
   @Override
   public void execute(){
-    big.set( 0.6 );
+    big.set( 0.3 );
   }
 
   @Override

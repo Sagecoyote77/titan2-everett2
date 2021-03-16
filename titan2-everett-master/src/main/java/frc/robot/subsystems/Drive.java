@@ -28,9 +28,8 @@ public class Drive extends SubsystemBase {
   
   // here's a gyro
   public GyroWrapper gyro = new GyroWrapper( SPI.Port.kMXP );
-
-  public Rev2mDistanceSensor leftDistanceSensor = new Rev2mDistanceSensor(Port.kMXP);
-  public Rev2mDistanceSensor rightDistanceSensor = new Rev2mDistanceSensor(Port.kOnboard);
+  // public Rev2mDistanceSensor leftDistanceSensor = new Rev2mDistanceSensor(Port.kMXP);
+  // public Rev2mDistanceSensor rightDistanceSensor = new Rev2mDistanceSensor(Port.kOnboard);
   
   // here's some motors
   public Jaguar frontLeftMotor;
@@ -53,6 +52,15 @@ public class Drive extends SubsystemBase {
 
   public Drive(){    
 
+    // frontLeftMotor.setSafetyEnabled(false);
+    // backLeftMotor.setSafetyEnabled(false);
+    // frontRightMotor.setSafetyEnabled(false);
+    // backRightMotor.setSafetyEnabled(false);
+
+    //DifferentialDrive diffDrive = new DifferentialDrive( leftSide, rightSide );
+
+    //diffDrive.setSafetyEnabled(false);
+
     gyro.reset();
     // linking motors to ports
     frontLeftMotor = new Jaguar(Constants.PWDConstants.FRONT_LEFT);
@@ -72,8 +80,8 @@ public class Drive extends SubsystemBase {
      * must be called. This starts a background thread which will periodically
      * poll all enabled sensors and store their measured range.
     */
-    rightDistanceSensor.setAutomaticMode(true);
-    leftDistanceSensor.setAutomaticMode(true);
+    // rightDistanceSensor.setAutomaticMode(true);
+    // leftDistanceSensor.setAutomaticMode(true);
     
     
   }

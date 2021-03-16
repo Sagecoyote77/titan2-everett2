@@ -7,20 +7,16 @@ import edu.wpi.first.wpilibj.*;
 
 public class GyroWrapper extends ADXRS450_Gyro{
 
-    Gyro gyro = new ADXRS450_Gyro(SPI.Port.kMXP);
+    //Gyro gyro = new ADXRS450_Gyro(SPI.Port.kMXP);
     double raw = 0;
 
-    // public GyroWrapper(SPI.Port port) {
-    //     super();
-    // }
-
-    public GyroWrapper(Port kmxp) {
-        //kmxp = 4;
-	}
+    public GyroWrapper( SPI.Port port ) {
+        super();
+    }
 
 	public double getAngle(){
-        if( gyro.getRate() != 0 ){
-            raw = gyro.getAngle();
+        if( this.getRate() != 0 ){
+            raw = this.getAngle();
         }
         if(raw < 0) { return Math.abs(raw % 360 + 360); }
         else { return Math.abs(raw % 360); }

@@ -20,6 +20,7 @@ import edu.wpi.first.wpilibj.interfaces.Gyro;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
+import frc.robot.commands.ObstacleCourse;
 import edu.wpi.first.wpilibj.*;
 
 
@@ -32,7 +33,7 @@ import edu.wpi.first.wpilibj.*;
  */
 public class Robot extends TimedRobot {
 
-  Gyro gyro = new ADXRS450_Gyro(SPI.Port.kMXP);
+  //Gyro gyro = new ADXRS450_Gyro(SPI.Port.kMXP);
 
   private Command autonomousCommand;
 
@@ -48,46 +49,7 @@ public class Robot extends TimedRobot {
     RobotContainer.timer.start();
     // instantiating the contatainer is controversial as we keep many of the subsystems as static
     container = new RobotContainer();
-    
-
-    // camera thread
-    new Thread(() -> {
-      UsbCamera camera1 = CameraServer.getInstance().startAutomaticCapture();
-      camera1.setResolution(640, 480);
-
-      CvSink cvSink = CameraServer.getInstance().getVideo();
-      CvSource outputStream = CameraServer.getInstance().putVideo("Blur", 640, 480);
-
-      Mat source = new Mat();
-      Mat output = new Mat();
-
-      while(!Thread.interrupted()) {
-        if (cvSink.grabFrame(source) == 0) {
-          continue;
-        }
-        Imgproc.cvtColor(source, output, Imgproc.COLOR_BGR2GRAY);
-        outputStream.putFrame(output);
-      }
-    }).start();
-
-    new Thread(() -> {
-      UsbCamera camera2 = CameraServer.getInstance().startAutomaticCapture();
-      camera2.setResolution(640, 480);
-
-      CvSink cvSink = CameraServer.getInstance().getVideo();
-      CvSource outputStream = CameraServer.getInstance().putVideo("Blur 2", 640, 480);
-
-      Mat source = new Mat();
-      Mat output = new Mat();
-
-      while(!Thread.interrupted()) {
-        if (cvSink.grabFrame(source) == 1) {
-          continue;
-        }
-        Imgproc.cvtColor(source, output, Imgproc.COLOR_BGR2GRAY);
-        outputStream.putFrame(output);
-      }
-    }).start();
+    autonomousCommand = new ObstacleCourse();
 
   }
 
@@ -110,6 +72,9 @@ public class Robot extends TimedRobot {
     //SmartDashboard.putNumber("Elevator Encoder", RobotContainer.climbymcClimbClimberson.encoder.getRaw());
 
     SmartDashboard.putNumber("Timer", RobotContainer.timer.get());
+
+    //SmartDashboard.putNumber( "Angle", RobotContainer.driveTrain.gyro.getAngle() );
+
   }
  
   /**
@@ -144,8 +109,10 @@ public class Robot extends TimedRobot {
 
     // schedule the autonomous command (example)
     if (autonomousCommand != null) {
+      System.out.println( "autonomousInit" );
       autonomousCommand.schedule();
-    }
+    } 
+    //CommandScheduler.ObstacleCourse.ObstacleCourse();
   }
 
   /**
@@ -153,6 +120,7 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void autonomousPeriodic() {
+    CommandScheduler.getInstance().run();
   }
 
   @Override
@@ -174,7 +142,6 @@ public class Robot extends TimedRobot {
   
   public void teleopPeriodic() {
     CommandScheduler.getInstance().run();
-    System.out.println(gyro.getAngle());
 
   }
 

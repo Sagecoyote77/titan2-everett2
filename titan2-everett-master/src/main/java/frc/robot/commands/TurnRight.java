@@ -6,12 +6,12 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.RobotContainer;
 import frc.robot.subsystems.Drive;
 
-public class DriveTimeForward extends CommandBase{
+public class TurnRight extends CommandBase{
     private int count = 0;
   private double time;
   private Drive drive = RobotContainer.driveTrain;
 
-  public DriveTimeForward( double time ) {
+  public TurnRight( double time ) {
     // Use requires() here to declare subsystem dependencies
     addRequirements(drive);
     this.time = time;
@@ -27,7 +27,7 @@ public class DriveTimeForward extends CommandBase{
   @Override
   public void execute() {
       count ++;
-      drive.tankDrive.arcadeDrive( 0.2, 0.2 );
+      drive.tankDrive.arcadeDrive( -0.6, -0.9 );
     }
 
 
